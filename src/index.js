@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
-const App = () => {
+class App extends Component {
+  constructor() {
+    super()
+  }
+  get_users(){
+    axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
+    .then((res) => { console.log(res); })
+    .catch((err) => { console.log(err); })
+  }
+  render() {
     return (
       <div className="container">
         <div className="row">
@@ -14,6 +24,8 @@ const App = () => {
       </div>
     )
   }
+}
+
   
   ReactDOM.render(
     <App />,
