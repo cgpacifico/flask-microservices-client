@@ -5,7 +5,9 @@ import axios from 'axios';
 class App extends Component {
   constructor() {
     super()
-    this.get_users()
+  }
+  componentDidMount() {
+    this.get_users();
   }
   get_users(){
     axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
