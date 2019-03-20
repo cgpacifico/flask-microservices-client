@@ -5,10 +5,11 @@ import axios from 'axios';
 class App extends Component {
   constructor() {
     super()
+    this.get_users()
   }
   get_users(){
     axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
-    .then((res) => { console.log(res); })
+    .then((res) => { console.log(res.data.data); })
     .catch((err) => { console.log(err); })
   }
   render() {
