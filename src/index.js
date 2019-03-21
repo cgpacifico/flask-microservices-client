@@ -27,7 +27,8 @@ class App extends Component {
             <br/>
             <h1>All Users</h1>
             <hr/><br/>
-            <AddUser myprop={'Cara'} />
+            <AddUser />
+            <br/>
             <UsersList users={this.state.users}/>
           </div>
         </div>
