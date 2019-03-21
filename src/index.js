@@ -19,6 +19,10 @@ class App extends Component {
     .then((res) => { this.setState({users: res.data.data.users}); })
     .catch((err) => { console.log(err); })
   }
+  addUser(event) {
+    event.preventDefault();
+    console.log('sanity check!')
+  }
   render() {
     return (
       <div className="container">
@@ -27,7 +31,7 @@ class App extends Component {
             <br/>
             <h1>All Users</h1>
             <hr/><br/>
-            <AddUser />
+            <AddUser addUser={this.addUser.bind(this)}/>
             <br/>
             <UsersList users={this.state.users}/>
           </div>

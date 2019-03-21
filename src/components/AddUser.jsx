@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddUser = (props) => {
   return (
-    <form onSubmit={(event) => event.preventDefault()}>
+    <form onSubmit={(event) => props.addUser(event)}>
     <div className="form-group">
         <input
         name="username"
