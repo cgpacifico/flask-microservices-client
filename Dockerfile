@@ -16,6 +16,9 @@ ENV REACT_APP_USERS_SERVICE_URL $REACT_APP_USERS_SERVICE_URL
 # install and cache app dependencies
 ADD package.json /usr/src/app/package.json
 RUN npm install --silent
+# is this missing from the other thing?
+RUN npm install react-scripts@0.9.5 -g --silent
+###
 RUN npm install pushstate-server -g --silent
 
 # add app
